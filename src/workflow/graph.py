@@ -34,24 +34,18 @@ def create_graph(
 
     def orchestrate(state: State) -> List[str]:
         orchestrator_response: OrchestratorOutput = state["orchestrator_response"]
-        next_nodes = []
-
-        if orchestrator_response.general_law:
-            next_nodes.append("general_legal_research")
-
-        if orchestrator_response.company_law:
-            next_nodes.append("company_legal_research")
         
-        if not next_nodes:
-            next_nodes.append("fallback")
+        if orchestrator_response.coding:
+            return "coding"
         
-        return next_nodes
-    
+        else:
+            return "fallback"
+        
 
     async def coding_node(state: State):
         response = await general_legal_researcher.interact(state=state)
 
-        return {"general_legal_response": response}
+        return {"final_response": response}
 
     
     async def fallback_node(state: State):
