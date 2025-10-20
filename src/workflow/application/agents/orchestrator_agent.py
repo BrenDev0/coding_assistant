@@ -20,6 +20,7 @@ class Orchestrator:
         - Software engineering principles or practices
         - Debugging, testing, or optimizing code
         - Development tools or environments
+        - Guidance on using libraries and frameworks, including their best practices and common use cases
 
         Set fallback = True if the query:
         - Is unrelated to coding or software engineering
@@ -28,6 +29,7 @@ class Orchestrator:
         Examples:
         - "How do I write a Python function?" - coding: True, fallback: False
         - "What is the best way to debug JavaScript?" - coding: True, fallback: False
+        - "How do I use the React framework?" - coding: True, fallback: False
         - "What is the weather today?" - coding: False, fallback: True
         - "Help" - coding: False, fallback: True
         """

@@ -92,7 +92,7 @@ def create_graph(
         orchestrate,
         {
             "coding": "coding",
-            "fallback": "fallbakc"
+            "fallback": "fallback"
         }
     )
 
