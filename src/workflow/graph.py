@@ -29,11 +29,11 @@ def create_graph(
     async def orchestrator_node(state: State):       
         response =  await context_orchestrator_agent.interact(state=state)
 
-        return {"context_orchestrator_response": response}
+        return {"orchestrator_response": response}
     
 
     def orchestrate(state: State) -> List[str]:
-        orchestrator_response: OrchestratorOutput = state["context_orchestrator_response"]
+        orchestrator_response: OrchestratorOutput = state["orchestrator_response"]
         next_nodes = []
 
         if orchestrator_response.general_law:
