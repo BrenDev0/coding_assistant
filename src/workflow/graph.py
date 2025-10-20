@@ -85,10 +85,10 @@ def create_graph(
     graph.add_node("fallback", fallback_node)
     graph.add_node("handle_response", hanlde_response_node)
     
-    graph.add_edge(START, "context_orchestrator")
+    graph.add_edge(START, "orchestrator")
     
     graph.add_conditional_edges(
-        "context_orchestrator",
+        "orchestrator",
         orchestrate,
         {
             "coding": "coding",
