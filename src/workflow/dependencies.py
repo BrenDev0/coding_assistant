@@ -77,13 +77,11 @@ def get_fallback_agent(
 def get_coding_agent(
     llm_service: LlmService = Depends(get_llm_service),
     prompt_service: PromptService = Depends(get_prompt_service),
-    streaming: WsStreaming = Depends(get_ws_streaming_use_case),
-    search_for_context: SearchForContext = Depends(get_search_for_context_use_case)
+    streaming: WsStreaming = Depends(get_ws_streaming_use_case)
 ) -> CodeAssistant:
     return CodeAssistant(
         llm_service=llm_service,
         prompt_service=prompt_service,
-        streaming=streaming,
-        search_for_context=search_for_context
+        streaming=streaming
     )
 
