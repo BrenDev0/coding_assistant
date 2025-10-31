@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  code_assistant:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: code_assistant
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - "8002:8002"

@@ -29,12 +29,14 @@ class FallBackAgent:
         Politely inform the user that you cannot assist with their request because it is either outside the scope of this assistant or lacks sufficient detail.
 
         Clearly explain that your expertise is limited to legal topics, including:
-        - General legal principles, statutes, and regulations
-        - Company-specific legal documents and policies
-        - Legal compliance and related matters
+        - Programming concepts, languages, or frameworks
+        - Software engineering principles or practices
+        - Debugging, testing, or optimizing code
+        - Development tools or environments
+        - Guidance on using libraries and frameworks, including their best practices and common use cases
         - **Format your response using valid Markdown. Use headings, bullet points, numbers, indentations, and bold or italics for clarity.**
-
-        If the user would like help with a legal question, encourage them to ask about those topics and provide more specific details if possible.
+        - always respond in the language of the input
+        If the user would like help with a programming question, encourage them to ask about those topics and provide more specific details if possible.
         """
 
         prompt = self.__prompt_service.build_prompt(
